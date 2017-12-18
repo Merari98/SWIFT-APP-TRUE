@@ -1,1 +1,40 @@
-<ion-nav [root]="rootPage"></ion-nav>
+<ion-menu [content]="mainContent">
+  <ion-header>
+    <ion-toolbar color="colbat">
+      <ion-title>
+        Menu
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content id="side-menu21">
+    <ion-list id="menu-list1">
+      <ion-item-sliding>
+        <ion-item color="positive" menuClose="" on-click="goToHome()" id="menu-list-item1">
+          Accueil
+          <ion-icon color="colbat"name="home" item-right></ion-icon>
+        </ion-item>
+        <ion-item-options side="left">
+          <button ion-button color="positive"></button>
+        </ion-item-options>
+      </ion-item-sliding>
+      <ion-item color="positive" menuClose="" on-click="goToCours()" id="menu-list-item2">
+        Cours
+        <ion-icon color="colbat"name="book" item-right></ion-icon>
+      </ion-item>
+      <ion-item color="positive" menuClose="" on-click="goToBibliothQue()" id="menu-list-item3">
+        Bibliothèque
+        <ion-icon color="colbat"name="albums" item-right></ion-icon>
+      </ion-item>
+      <ion-item color="positive" menuClose="" on-click="goToInformations()" id="menu-list-item4">
+        Informations
+        <ion-icon color ="colbat" name="document" item-right></ion-icon>
+      </ion-item>
+      <ion-item color="positive" menuClose="" on-click="goToChat()" id="menu-list-item5">
+        Chat
+        <ion-icon color ="colbat" name="chatbubbles" item-right></ion-icon>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-nav #mainContent [root]="rootPage"></ion-nav>

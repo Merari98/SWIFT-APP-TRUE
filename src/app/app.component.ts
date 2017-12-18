@@ -1,14 +1,26 @@
-import { Component } from '@angular/core';
-import { Platform } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { Platform, Nav } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+import { InformationsPage } from '../pages/informations/informations';
+import { InformationsDeLaClassePage } from '../pages/informations-de-la-classe/informations-de-la-classe';
+import { CoursPage } from '../pages/cours/cours';
+import { Cours2Page } from '../pages/cours2/cours2';
+import { BibliothQuePage } from '../pages/biblioth-que/biblioth-que';
+import { ChatPage } from '../pages/chat/chat';
+
+
 import { HomePage } from '../pages/home/home';
+
+
+
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = HomePage;
+  @ViewChild(Nav) navCtrl: Nav;
+    rootPage:any = HomePage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
@@ -18,5 +30,26 @@ export class MyApp {
       splashScreen.hide();
     });
   }
+  goToHome(params){
+    if (!params) params = {};
+    this.navCtrl.setRoot(HomePage);
+  }goToInformations(params){
+    if (!params) params = {};
+    this.navCtrl.setRoot(InformationsPage);
+  }goToInformationsDeLaClasse(params){
+    if (!params) params = {};
+    this.navCtrl.setRoot(InformationsDeLaClassePage);
+  }goToCours(params){
+    if (!params) params = {};
+    this.navCtrl.setRoot(CoursPage);
+  }goToCours2(params){
+    if (!params) params = {};
+    this.navCtrl.setRoot(Cours2Page);
+  }goToBibliothQue(params){
+    if (!params) params = {};
+    this.navCtrl.setRoot(BibliothQuePage);
+  }goToChat(params){
+    if (!params) params = {};
+    this.navCtrl.setRoot(ChatPage);
+  }
 }
-

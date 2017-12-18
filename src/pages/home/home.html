@@ -1,14 +1,34 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="colbat">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-buttons start>
+    </ion-buttons>
     <ion-title>
-      Ionic Blank
+      Accueil
     </ion-title>
   </ion-navbar>
 </ion-header>
-
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content padding id="page1">
+  <ion-list id="home-list2">
+    <ion-item color="positive" on-click="goToInformations()" id="home-list-item6">
+      <ion-icon name="calendar" item-left></ion-icon>
+      {{data}}
+      <ion-icon name="arrow-forward" item-right></ion-icon>
+    </ion-item>
+  </ion-list>
+  <h3 id="home-heading1" style="color:#000000;font-weight:300;">
+    Cours Récement Consulté
+  </h3>
+  <ion-list id="home-list6">
+    <ion-item *ngFor="let item of arrData; let i = index" color="none" id="home-list-item10">
+      <ion-thumbnail item-left>
+        <img src="{{item.image}}">
+      </ion-thumbnail>
+      <h2>
+        {{item.title}}
+      </h2>
+    </ion-item>
+  </ion-list>
 </ion-content>
