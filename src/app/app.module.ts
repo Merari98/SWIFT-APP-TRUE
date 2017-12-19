@@ -20,6 +20,14 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import {FIREBASE_CONFIG} from './firebase.credentials';
 import { EventDataProvider } from '../providers/event-data/event-data';
 import { HTTP } from '@ionic-native/http';
+import { LoginPage } from '../pages/login/login';
+import{ AngularFireAuth} from 'angularfire2/auth';
+import { RegisterPage } from '../pages/register/register';
+import { Tab1Page } from '../pages/tab1/tab1';
+import { Tab2Page } from '../pages/tab2/tab2';
+import { Tab3Page } from '../pages/tab3/tab3';
+
+
 @NgModule({
   declarations: [
     MyApp,
@@ -31,7 +39,12 @@ import { HTTP } from '@ionic-native/http';
     Cours2Page,
     DiscussionPage,
     InformationsDeLaClassePage,
-    PagePage
+    PagePage,
+    LoginPage,
+    RegisterPage,
+    Tab1Page,
+    Tab2Page,
+    Tab3Page
   ],
   imports: [
     BrowserModule,
@@ -50,13 +63,19 @@ import { HTTP } from '@ionic-native/http';
     Cours2Page,
     DiscussionPage,
     InformationsDeLaClassePage,
-    PagePage
+    PagePage,
+    LoginPage,
+    RegisterPage,
+    Tab1Page,
+    Tab2Page,
+    Tab3Page
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     EventDataProvider,
+    AngularFireAuth
   ]
 })
 export class AppModule {}

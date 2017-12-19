@@ -9,9 +9,11 @@ import { CoursPage } from '../pages/cours/cours';
 import { Cours2Page } from '../pages/cours2/cours2';
 import { BibliothQuePage } from '../pages/biblioth-que/biblioth-que';
 import { ChatPage } from '../pages/chat/chat';
+import { RegisterPage } from '../pages/register/register';
 
 
 import { HomePage } from '../pages/home/home';
+import { LoginPage } from '../pages/login/login';
 
 
 
@@ -20,7 +22,7 @@ import { HomePage } from '../pages/home/home';
 })
 export class MyApp {
   @ViewChild(Nav) navCtrl: Nav;
-    rootPage:any = HomePage;
+    rootPage:any = LoginPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
@@ -29,27 +31,33 @@ export class MyApp {
       statusBar.styleDefault();
       splashScreen.hide();
     });
-  }
-  goToHome(params){
+    }
+  goToLogin(params){
+    if (!params) params = {};
+    this.navCtrl.setRoot(LoginPage);
+  } goToHome(params){
     if (!params) params = {};
     this.navCtrl.setRoot(HomePage);
-  }goToInformations(params){
+  } goToInformations(params){
     if (!params) params = {};
     this.navCtrl.setRoot(InformationsPage);
-  }goToInformationsDeLaClasse(params){
+  } goToInformationsDeLaClasse(params){
     if (!params) params = {};
     this.navCtrl.setRoot(InformationsDeLaClassePage);
-  }goToCours(params){
+  } goToCours(params){
     if (!params) params = {};
     this.navCtrl.setRoot(CoursPage);
-  }goToCours2(params){
+  } goToCours2(params){
     if (!params) params = {};
     this.navCtrl.setRoot(Cours2Page);
-  }goToBibliothQue(params){
+  } goToBibliothQue(params){
     if (!params) params = {};
     this.navCtrl.setRoot(BibliothQuePage);
-  }goToChat(params){
+  } goToChat(params){
     if (!params) params = {};
     this.navCtrl.setRoot(ChatPage);
-  }
+  } goToRegister(params){
+  if (!params) params = {};
+  this.navCtrl.setRoot(ChatPage);
+  } 
 }

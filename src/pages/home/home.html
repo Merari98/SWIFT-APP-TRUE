@@ -21,14 +21,12 @@
   <h3 id="home-heading1" style="color:#000000;font-weight:300;">
     Cours Récement Consulté
   </h3>
-  <ion-list id="home-list6">
-    <ion-item *ngFor="let item of arrData; let i = index" color="none" id="home-list-item10">
-      <ion-thumbnail item-left>
-        <img src="{{item.image}}">
-      </ion-thumbnail>
-      <h2>
+  <ion-card *ngFor="let item of arrData; let i = index" on-click="goToCours2()">
+    <img src="{{item.image}}"/>
+    <ion-card-content>
+      <ion-card-title>
         {{item.title}}
-      </h2>
-    </ion-item>
-  </ion-list>
+        </ion-card-title>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

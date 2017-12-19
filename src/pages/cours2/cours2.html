@@ -8,9 +8,9 @@
 
 <ion-content padding>
 
-  <div padding text-center>
+  <div padding text-center *ngFor="let item of arrData; let i = index">
 
-    <a href="{{someTextUrl}}">Get some text there</a>
+  <h3>{{item.file}}</h3>
 
   </div>
 
